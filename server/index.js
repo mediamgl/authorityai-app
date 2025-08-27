@@ -1,20 +1,3 @@
-app.get('/api/test/mongodb', async (req, res) => {
-  try {
-    const userCount = await User.countDocuments();
-    res.json({
-      success: true,
-      connectionState: mongoose.connection.readyState,
-      userCount
-    });
-  } catch (error) {
-    res.status(500).json({
-      success: false,
-      error: error.message
-    });
-  }
-});
-
-
 const express = require('express')
 const cors = require('cors')
 const mongoose = require('mongoose')
